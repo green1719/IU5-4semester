@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/examples/jsm/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <title>Детали 3D модели</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="detail-page">
+  <a class="back-link" href="index.html">&larr; Назад к галерее</a>
+  <div id="model-title" class="model-title"></div>
+  <div class="viewer-controls">
+    <button id="zoom-in" class="st_calc-btn">+</button>
+    <button id="zoom-out" class="st_calc-btn">−</button>
+    <button id="view-front" class="st_calc-btn">Вид спереди</button>
+    <button id="view-back" class="st_calc-btn">Сзади</button>
+    <button id="view-left" class="st_calc-btn">Слева</button>
+    <button id="view-right" class="st_calc-btn">Справа</button>
+  </div>
+  <canvas id="viewer-canvas"></canvas>
+  <div id="model-title" class="model-title"></div>
+  <script src="idb.js"></script>
+  <script type="module" src="detail.js"></script>
+</body>
+</html>
