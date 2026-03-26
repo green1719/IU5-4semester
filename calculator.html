@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="calculator.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>СтатКалькулятор</title>
+</head>
+
+<body>
+
+<header class="st_calc_site-header">
+    <div class="st_calc_header-row">
+        <span class="st_calc-label">СТАТКАЛЬКУЛЯТОР</span>
+        <button id="st_calc_btn_toggle_theme" class="st_calc_header-control-btn">Тема</button>
+    </div>
+    <h1 class="st_calc-module-title">Калькулятор статистического анализа</h1>
+    <h4 class="st_calc-module-description">Арифметика, дисперсия и другие операции над выборкой</h4>
+</header>
+
+<div class="st_calc-calculator-wrapper">
+
+    <div id="display-output-result" class="st_calc-display-panel">
+        0
+    </div>
+
+    <div class="st_calc-btn-grid">
+
+        <div class="st_calc-btn-row">
+            <button id="st_calc_btn_op_clear_dataset"      class="st_calc-btn st_calc_secondary">C</button>
+            <button id="st_calc_btn_op_negate"             class="st_calc-btn st_calc_secondary">+/−</button>
+            <button id="st_calc_btn_op_percent"            class="st_calc-btn st_calc_secondary">%</button>
+            <button id="st_calc_btn_op_divide"             class="st_calc-btn st_calc_secondary">/</button>
+            <button id="st_calc_btn_op_remove_observation" class="st_calc-btn st_calc_secondary">⌫</button>
+            <button id="st_calc_btn_toggle_display"        class="st_calc-btn st_calc_secondary">🖥</button>
+        </div>
+
+        <div class="st_calc-btn-row">
+            <button id="st_calc_btn_sample_7"              class="st_calc-btn">7</button>
+            <button id="st_calc_btn_sample_8"              class="st_calc-btn">8</button>
+            <button id="st_calc_btn_sample_9"              class="st_calc-btn">9</button>
+            <button id="st_calc_btn_op_multiply"           class="st_calc-btn st_calc_primary">×</button>
+            <button id="st_calc_btn_op_std_dev"            class="st_calc-btn st_calc_primary">√</button>
+            <button id="st_calc_btn_op_variance"           class="st_calc-btn st_calc_secondary">σ²</button>
+        </div>
+
+        <div class="st_calc-btn-row">
+            <button id="st_calc_btn_sample_4"              class="st_calc-btn">4</button>
+            <button id="st_calc_btn_sample_5"              class="st_calc-btn">5</button>
+            <button id="st_calc_btn_sample_6"              class="st_calc-btn">6</button>
+            <button id="st_calc_btn_op_subtract"           class="st_calc-btn st_calc_primary">−</button>
+            <button id="st_calc_btn_op_sum_of_squares"     class="st_calc-btn st_calc_primary">x²</button>
+        </div>
+
+        <div class="st_calc-btn-row">
+            <button id="st_calc_btn_sample_1" class="st_calc-btn">1</button>
+            <button id="st_calc_btn_sample_2" class="st_calc-btn">2</button>
+            <button id="st_calc_btn_sample_3" class="st_calc-btn">3</button>
+            <button id="st_calc_btn_op_add" class="st_calc-btn st_calc_primary">+</button>
+            <button id="st_calc_btn_op_combinatorics"      class="st_calc-btn st_calc_primary">x!</button>
+        </div>
+
+        <div class="st_calc-btn-row">
+            <button id="st_calc_btn_sample_0"              class="st_calc-btn">0</button>
+            <button id="st_calc_btn_sample_batch_input"    class="st_calc-btn">000</button>
+            <button id="st_calc_btn_sample_decimal_point"  class="st_calc-btn">.</button>
+            <button id="st_calc_btn_op_compute_result"     class="st_calc-btn st_calc_primary st_calc_compute">=</button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
