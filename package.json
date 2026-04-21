@@ -1,0 +1,28 @@
+{
+  "name": "lab5.1",
+  "version": "1.0.0",
+  "description": "Лабораторные работы по курсу \"Проектирование сетевых приложений\". МГТУ Баумана, 2 курс, 4 семестр",
+  "homepage": "https://github.com/green1719/IU5-4semester#readme",
+  "bugs": {
+    "url": "https://github.com/green1719/IU5-4semester/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/green1719/IU5-4semester.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "vite": "^8.0.8"
+  }
+}
