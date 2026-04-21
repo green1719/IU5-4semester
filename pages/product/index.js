@@ -1,12 +1,12 @@
 import {BackButtonComponent} from "../../components/back-button/index.js";
 import {HeaderComponent} from "../../components/header/index.js";
-import {MainPage} from "../main/index.js";
 
 export class ProductPage {
-    constructor(parent, id, data) {
+    constructor(parent, id, data, onGoBack) {
         this.parent = parent
         this.id = id
         this.data = data
+        this.onGoBack = onGoBack
     }
 
     getData() {
@@ -32,8 +32,7 @@ export class ProductPage {
     }
 
     clickBack() {
-        const mainPage = new MainPage(this.parent, this.data)
-        mainPage.render()
+        this.onGoBack()
     }
 
     render() {
