@@ -3,9 +3,11 @@ const fs = require('fs');
 const readData = (filePath) => {
     try {
         const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
+        const parsed = JSON.parse(data);
+        console.log(`[FileService] Read ${parsed.length} records from ${filePath}`);
+        return parsed;
     } catch (err) {
-        console.error('Ошибка чтения файла:', err);
+        console.error('Ошибка чтения файла:', err.message);
         return [];
     }
 };
