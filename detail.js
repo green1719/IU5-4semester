@@ -5,9 +5,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 // ---- ПРЕСЕТЫ ----
 const PRESETS = [
   { id: 1, title: "Математическое ожидание", model: "models/mat_exp.glb" },
-  { id: 2, title: "Дисперсия", model: "models/disp.glb" },
-  { id: 3, title: "Медиана", model: "models/median.glb" },
-  { id: 4, title: "Ковариация", model: "models/cov.glb" },
+  { id: 2, title: "Дисперсия",               model: "models/disp.glb" },
+  { id: 3, title: "Медиана",                 model: "models/median.glb" },
+  { id: 4, title: "Ковариация",              model: "models/cov.glb" },
 ];
 // ---- ГЛОБАЛЬНЫЕ camera и controls ----
 let camera, controls;
@@ -44,9 +44,66 @@ if (id) {
   document.getElementById('model-title').textContent = 'Нет данных';
 }
 
+// ---- Рендер превью в offscreen canvas → img ----
+function renderPreviewImage(item, imgEl, titleText) {
+  const offscreen = document.createElement('canvas');
+  offscreen.width  = 320;
+  offscreen.height = 320;
+
+  const renderer = new THREE.WebGLRenderer({ canvas: offscreen, alpha: true, antialias: true, preserveDrawingBuffer: true });
+  renderer.setClearColor(0xe6ebf5, 1);
+  renderer.setSize(320, 320, false);
+
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
+  camera.position.set(0, 0.7, 2);
+  scene.add(new THREE.AmbientLight(0xffffff, 1));
+  const light = new THREE.DirectionalLight(0xffffff, 0.8);
+  light.position.set(2, 6, 4);
+  scene.add(light);
+
+  const loader = new GLTFLoader();
+
+  function normalize(obj) {
+    const box    = new THREE.Box3().setFromObject(obj);
+    const size   = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+    obj.position.x -= center.x;
+    obj.position.z -= center.z;
+    obj.position.y -= box.min.y;
+    const maxDim = Math.max(size.x, size.y, size.z);
+    if (maxDim > 0) obj.scale.multiplyScalar(1.1 / maxDim);
+  }
+
+  function finish(gltf) {
+    normalize(gltf.scene);
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
+    imgEl.src   = offscreen.toDataURL();
+    imgEl.alt   = titleText;
+    imgEl.style.display = 'block';
+    renderer.dispose();
+  }
+
+  if (item.model) {
+    loader.load(item.model, finish, undefined, () => { imgEl.style.display = 'none'; });
+  } else if (item.buffer) {
+    loader.parse(item.buffer, '', finish, () => { imgEl.style.display = 'none'; });
+  }
+}
+
 // ---- ФУНКЦИЯ ОТРИСОВКИ ----
 function renderModel() {
   document.getElementById('model-title').textContent = title || "3D модель";
+
+  // ---- Картинка рядом с 3D ----
+  const imgEl = document.getElementById('model-image');
+  if (imgEl && toRender.length > 0) {
+    renderPreviewImage(toRender[0], imgEl, title);
+  } else if (imgEl) {
+    imgEl.style.display = 'none';
+  }
+
   const canvas = document.getElementById('viewer-canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
