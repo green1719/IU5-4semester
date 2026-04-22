@@ -1,14 +1,9 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
 const statsRouter = require('./routes/stats');
 const statsService = require('./services/statsService');
 
 const app = express();
-
-// Разрешаем CORS для всех источников — нужно чтобы lab5.1 через Live Server
-// могла делать запросы на этот сервер с другого порта
-app.use(cors());
 const PORT = 3000;
 
 // ============ ИНИЦИАЛИЗАЦИЯ ПРИЛОЖЕНИЯ ============
