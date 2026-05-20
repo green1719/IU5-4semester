@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <rect width="300" height="200" fill="#ffffff"/>
+  <!-- grid lines -->
+  <line x1="150" y1="10" x2="150" y2="190" stroke="#ccc" stroke-width="1"/>
+  <line x1="10" y1="170" x2="290" y2="170" stroke="#ccc" stroke-width="1"/>
+  <!-- axes -->
+  <line x1="150" y1="12" x2="150" y2="190" stroke="#333" stroke-width="1.8"/>
+  <line x1="10" y1="170" x2="288" y2="170" stroke="#333" stroke-width="1.8"/>
+  <polygon points="150,8 146,18 154,18" fill="#333"/>
+  <polygon points="292,170 282,166 282,174" fill="#333"/>
+  <text x="156" y="16" font-size="12" fill="#333" font-family="Arial">y</text>
+  <text x="283" y="185" font-size="12" fill="#333" font-family="Arial">x</text>
+  <!-- parabola y=x², origin=(150,170), 1 unit=25px, y-up -->
+  <polyline
+    fill="none" stroke="#3187FF" stroke-width="2.5" stroke-linejoin="round"
+    points="
+      90,26
+      100,70
+      112.5,113.75
+      125,145
+      137.5,163.75
+      150,170
+      162.5,163.75
+      175,145
+      187.5,113.75
+      200,70
+      210,26
+    "
+  />
+  <!-- tick labels -->
+  <text x="143" y="184" font-size="10" fill="#555" font-family="Arial">0</text>
+  <text x="168" y="184" font-size="10" fill="#555" font-family="Arial">1</text>
+  <text x="118" y="184" font-size="10" fill="#555" font-family="Arial">-1</text>
+  <text x="193" y="184" font-size="10" fill="#555" font-family="Arial">2</text>
+  <text x="93" y="184" font-size="10" fill="#555" font-family="Arial">-2</text>
+  <text x="153" y="144" font-size="10" fill="#555" font-family="Arial">1</text>
+  <text x="153" y="119" font-size="10" fill="#555" font-family="Arial">2</text>
+  <text x="153" y="69" font-size="10" fill="#555" font-family="Arial">4</text>
+</svg>
