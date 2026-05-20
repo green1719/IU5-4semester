@@ -1,4 +1,4 @@
-export class AccordionComponent {
+export class AccordionComponentOutcomes {
     constructor(parent) {
         this.parent = parent
     }

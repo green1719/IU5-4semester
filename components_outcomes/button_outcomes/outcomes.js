@@ -1,4 +1,4 @@
-export class ButtonComponent {
+export class ButtonComponentOutcomes {
     constructor(parent) {
         this.parent = parent;
     }

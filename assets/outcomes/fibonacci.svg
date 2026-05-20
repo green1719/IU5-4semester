@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" fill="#7D32FF"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3">
+    <rect x="200" y="120" width="6" height="6"/>
+    <rect x="206" y="120" width="6" height="6"/>
+    <rect x="200" y="108" width="12" height="12"/>
+    <rect x="180" y="108" width="20" height="20"/>
+    <rect x="180" y="76" width="32" height="32"/>
+    <rect x="128" y="76" width="52" height="52"/>
+    <rect x="128" y="128" width="84" height="36" />
+    <path d="M212,126 a6,6 0 0,1 -6,6 M206,132 a6,6 0 0,1 -6,-6 M200,126 a12,12 0 0,1 0,-12
+             M200,108 a20,20 0 0,1 -20,0 M180,108 a32,32 0 0,1 32,-32 M212,76 a52,52 0 0,1 -52,52" />
+  </g>
+  <text x="200" y="210" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="28" font-weight="700">Фибоначчи</text>
+  <text x="200" y="36" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="16" opacity="0.85">1 · 1 · 2 · 3 · 5 · 8 · 13 · 21</text>
+</svg>

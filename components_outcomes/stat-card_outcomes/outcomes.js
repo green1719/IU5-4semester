@@ -1,4 +1,4 @@
-export class StatCardComponent {
+export class StatCardComponentOutcomes {
     constructor(parent) {
         this.parent = parent
     }
@@ -6,6 +6,8 @@ export class StatCardComponent {
     getHTML(data) {
         return `
             <div class="st_calc-card" id="card-${data.id}">
+                <img src="${data.image}" alt="${data.title}"
+                    style="width: 100%; height: 140px; object-fit: cover; border-radius: 12px; margin-bottom: 8px;">
                 <div class="st_calc-card-header">
                     <span class="st_calc-card-num">${data.id}</span>
                     <h5 class="st_calc-card-title">${data.title}</h5>
@@ -25,7 +27,7 @@ export class StatCardComponent {
                     <button class="st_calc-btn st_calc_primary"
                         style="width: auto; border-radius: 34px; font-size: 14px; padding: 6px 18px;"
                         id="click-card-${data.id}" data-id="${data.id}">
-                        Подробнее
+                        Рассчитать
                     </button>
                     <button class="st_calc-btn"
                         style="width: auto; border-radius: 34px; font-size: 14px; padding: 6px 18px; background: #ff4d4d; color: white;"

@@ -1,9 +1,4 @@
-class Ajax {
-    /**
-     * GET запрос
-     * @param {string} url - Адрес запроса
-     * @param {function} callback - Функция обратного вызова (data, status)
-     */
+class AjaxOutcomes {
     get(url, callback) {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -16,12 +11,6 @@ class Ajax {
         };
     }
 
-    /**
-     * POST запрос
-     * @param {string} url - Адрес запроса
-     * @param {object} data - Данные для отправки
-     * @param {function} callback - Функция обратного вызова (data, status)
-     */
     post(url, data, callback) {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', url);
@@ -35,12 +24,6 @@ class Ajax {
         };
     }
 
-    /**
-     * PATCH запрос
-     * @param {string} url - Адрес запроса
-     * @param {object} data - Данные для обновления
-     * @param {function} callback - Функция обратного вызова (data, status)
-     */
     patch(url, data, callback) {
         const xhr = new XMLHttpRequest();
         xhr.open('PATCH', url);
@@ -54,11 +37,6 @@ class Ajax {
         };
     }
 
-    /**
-     * DELETE запрос
-     * @param {string} url - Адрес запроса
-     * @param {function} callback - Функция обратного вызова (data, status)
-     */
     delete(url, callback) {
         const xhr = new XMLHttpRequest();
         xhr.open('DELETE', url);
@@ -71,11 +49,6 @@ class Ajax {
         };
     }
 
-    /**
-     * Обработчик ответа (приватный метод)
-     * @param {XMLHttpRequest} xhr - Объект запроса
-     * @param {function} callback - Функция обратного вызова
-     */
     _handleResponse(xhr, callback) {
         try {
             const data = xhr.responseText ? JSON.parse(xhr.responseText) : null;
@@ -87,4 +60,4 @@ class Ajax {
     }
 }
 
-export const ajax = new Ajax();
+export const ajaxOutcomes = new AjaxOutcomes();
