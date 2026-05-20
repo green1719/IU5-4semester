@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="outcomes.css">
+    <script type="text/javascript" src="outcomes.js"></script>
+    <title>СтатКалькулятор</title>
+</head>
+
+<body>
+
+<header class="outcomes-header">
+    <div class="outcomes-header-row">
+        <span class="outcomes-label">СТАТКАЛЬКУЛЯТОР</span>
+        <button id="outcomes-ctrl-theme" class="outcomes-control-btn">Тема</button>
+    </div>
+    <h1 class="outcomes-title">Калькулятор статистического анализа</h1>
+    <h4 class="outcomes-description">Арифметика, дисперсия и другие операции над выборкой</h4>
+</header>
+
+<div class="outcomes-wrapper">
+
+    <div id="outcomes-display-output" class="outcomes-display">
+        0
+    </div>
+
+    <div class="outcomes-grid">
+
+        <div class="outcomes-row">
+            <button id="outcomes-op-clear"      class="outcomes-btn outcomes-secondary">C</button>
+            <button id="outcomes-op-negate"     class="outcomes-btn outcomes-secondary">+/−</button>
+            <button id="outcomes-op-percent"    class="outcomes-btn outcomes-secondary">%</button>
+            <button id="outcomes-op-divide"     class="outcomes-btn outcomes-secondary">/</button>
+            <button id="outcomes-op-backspace"  class="outcomes-btn outcomes-secondary">⌫</button>
+            <button id="outcomes-ctrl-display"  class="outcomes-btn outcomes-secondary">🖥</button>
+        </div>
+
+        <div class="outcomes-row">
+            <button id="outcomes-input-7"       class="outcomes-btn outcomes-input-btn">7</button>
+            <button id="outcomes-input-8"       class="outcomes-btn outcomes-input-btn">8</button>
+            <button id="outcomes-input-9"       class="outcomes-btn outcomes-input-btn">9</button>
+            <button id="outcomes-op-multiply"   class="outcomes-btn outcomes-primary">×</button>
+            <button id="outcomes-op-std-dev"    class="outcomes-btn outcomes-primary">√</button>
+            <button id="outcomes-op-variance"   class="outcomes-btn outcomes-secondary">σ²</button>
+        </div>
+
+        <div class="outcomes-row">
+            <button id="outcomes-input-4"       class="outcomes-btn outcomes-input-btn">4</button>
+            <button id="outcomes-input-5"       class="outcomes-btn outcomes-input-btn">5</button>
+            <button id="outcomes-input-6"       class="outcomes-btn outcomes-input-btn">6</button>
+            <button id="outcomes-op-subtract"   class="outcomes-btn outcomes-primary">−</button>
+            <button id="outcomes-op-square"     class="outcomes-btn outcomes-primary">x²</button>
+        </div>
+
+        <div class="outcomes-row">
+            <button id="outcomes-input-1"       class="outcomes-btn outcomes-input-btn">1</button>
+            <button id="outcomes-input-2"       class="outcomes-btn outcomes-input-btn">2</button>
+            <button id="outcomes-input-3"       class="outcomes-btn outcomes-input-btn">3</button>
+            <button id="outcomes-op-add"        class="outcomes-btn outcomes-primary">+</button>
+            <button id="outcomes-op-factorial"  class="outcomes-btn outcomes-primary">x!</button>
+        </div>
+
+        <div class="outcomes-row">
+            <button id="outcomes-input-0"       class="outcomes-btn outcomes-input-btn">0</button>
+            <button id="outcomes-input-000"     class="outcomes-btn outcomes-input-btn">000</button>
+            <button id="outcomes-input-dot"     class="outcomes-btn outcomes-input-btn">.</button>
+            <button id="outcomes-op-compute"    class="outcomes-btn outcomes-primary outcomes-compute">=</button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
