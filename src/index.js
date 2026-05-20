@@ -1,81 +1,61 @@
 const express = require('express');
 const path = require('path');
-const statsRouter = require('./routes/stats');
-const statsService = require('./services/statsService');
+const outcomesRouter = require('./routes/outcomes');
+const outcomesService = require('./services/outcomesService');
 
 const app = express();
 const PORT = 3000;
 
-// ============ ИНИЦИАЛИЗАЦИЯ ПРИЛОЖЕНИЯ ============
-console.log('[AppFactory] Starting Stats application...');
+const DATA_FILE_PATH = path.join(__dirname, 'data/outcomes.json');
 
-// Определяем путь к файлу данных
-const DATA_FILE_PATH = path.join(__dirname, 'data/stats.json');
+outcomesService.init(DATA_FILE_PATH);
 
-// Инициализируем сервис с путем к файлу данных
-console.log('[ServiceLoader] Initializing StatsService +0ms');
-statsService.init(DATA_FILE_PATH);
-console.log('[ServiceLoader] StatsService initialized +1ms');
-
-console.log('[ServiceLoader] Initializing FileService +0ms');
-console.log('[ServiceLoader] FileService initialized +0ms');
-
-// 1. Встроенный middleware для парсинга JSON
-console.log('[MiddlewareLoader] Loading express.json() +0ms');
+// 1. Парсинг JSON тела запроса
 app.use(express.json());
 
-// 2. Логирующий middleware
-console.log('[MiddlewareLoader] Loading request logger middleware +0ms');
+// 3. Логирующий middleware
 app.use((req, res, next) => {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] ${req.method} ${req.url}`);
-    console.log(`[${timestamp}] Query params:`, req.query);
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
 });
 
-// Раздача собранного фронтенда из папки public как статики
+// 4. Раздача статики (собранный фронтенд)
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-// 3. Подключение маршрутов
-console.log('[RoutesResolver] Mapping {/api, GET} route +0ms');
+// 5. Информационный эндпоинт
 app.get('/api', (req, res) => {
     res.json({
-        message: 'Stats API Server',
+        message: 'Outcomes API Server',
         version: '1.0.0',
         endpoints: {
-            'GET /stats': 'Получить все выборки (с опциональным поиском ?title=...)',
-            'GET /stats/:id': 'Получить выборку по ID',
-            'POST /stats': 'Создать новую выборку',
-            'PATCH /stats/:id': 'Обновить выборку',
-            'DELETE /stats/:id': 'Удалить выборку',
-            'POST /stats/:id/values': 'Добавить значение в выборку'
+            'GET /outcomes':       'Получить все исходы (с опциональным поиском ?title=...)',
+            'GET /outcomes/:id':   'Получить исход по ID',
+            'POST /outcomes':      'Создать новый исход',
+            'PATCH /outcomes/:id': 'Обновить исход',
+            'DELETE /outcomes/:id':'Удалить исход'
         }
     });
 });
 
-console.log('[RoutesResolver] Mapping {/stats, GET} route +0ms');
-console.log('[RoutesResolver] Mapping {/stats, POST} route +0ms');
-console.log('[RoutesResolver] Mapping {/stats/:id, GET} route +0ms');
-console.log('[RoutesResolver] Mapping {/stats/:id, PATCH} route +0ms');
-console.log('[RoutesResolver] Mapping {/stats/:id, DELETE} route +0ms');
-console.log('[RoutesResolver] Mapping {/stats/:id/values, POST} route +0ms');
-app.use('/stats', statsRouter);
-console.log('[Router] Successfully loaded 6 routes +1ms');
+// 6. Редирект с / на outcomes.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'outcomes.html'));
+});
 
-// 4. Глобальная обработка 404
+// 7. Маршруты
+app.use('/outcomes', outcomesRouter);
+
+// 7. 404
 app.use((req, res) => {
     res.status(404).json({ error: 'Маршрут не найден' });
 });
 
-// 5. Error handler
+// 8. Error handler
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({ error: 'Внутренняя ошибка сервера' });
 });
 
-// 6. Запуск сервера
-console.log('[ExpressApplication] Express application successfully started +2ms');
 app.listen(PORT, () => {
-    console.log(`Application started successfully`);
     console.log(`Сервер запущен по адресу http://localhost:${PORT}`);
 });

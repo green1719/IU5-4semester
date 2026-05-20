@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" fill="#3187FF"/>
+  <text x="200" y="160" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="140" font-weight="700">
+    X<tspan font-size="80" baseline-shift="super">2</tspan>
+  </text>
+  <text x="200" y="210" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="20" opacity="0.9">Квадраты чисел</text>
+</svg>
