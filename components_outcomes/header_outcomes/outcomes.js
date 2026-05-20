@@ -1,4 +1,4 @@
-export class HeaderComponent {
+export class HeaderComponentOutcomes {
     constructor(parent) {
         this.parent = parent
     }
@@ -8,7 +8,7 @@ export class HeaderComponent {
             <header class="st_calc_site-header">
                 <div class="st_calc_header-row">
                     <span class="st_calc-label">СТАТКАЛЬКУЛЯТОР</span>
-                    <button id="home-btn" class="st_calc_header-control-btn">Домой</button>
+                    <button id="home-btn_outcomes" class="st_calc_header-control-btn">Домой</button>
                 </div>
                 <h1 class="st_calc-module-title">Калькулятор статистического анализа</h1>
                 <h4 class="st_calc-module-description">Арифметика, дисперсия и другие операции над выборкой</h4>
@@ -21,7 +21,7 @@ export class HeaderComponent {
         this.parent.insertAdjacentHTML('beforeend', html)
 
         if (onHome) {
-            document.getElementById('home-btn')
+            document.getElementById('home-btn_outcomes')
                 .addEventListener('click', onHome)
         }
     }

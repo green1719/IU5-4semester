@@ -1,18 +1,18 @@
-export class BackButtonComponent {
+export class BackButtonComponentOutcomes {
     constructor(parent) {
         this.parent = parent;
     }
 
     addListeners(listener) {
         document
-            .getElementById("back-button")
+            .getElementById("back-button_outcomes")
             .addEventListener("click", listener)
     }
 
     getHTML() {
         return (
             `
-                <button id="back-button" class="btn btn-primary" type="button">Назад</button>
+                <button id="back-button_outcomes" class="btn btn-primary" type="button">Назад</button>
             `
         )
     }
