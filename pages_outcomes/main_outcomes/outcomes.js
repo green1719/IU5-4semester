@@ -1,6 +1,7 @@
 import {StatCardComponentOutcomes} from "../../components_outcomes/stat-card_outcomes/outcomes.js";
 import {HeaderComponentOutcomes} from "../../components_outcomes/header_outcomes/outcomes.js";
 import {ProductPageOutcomes} from "../product_outcomes/outcomes.js";
+import {EditPageOutcomes} from "../edit_outcomes/outcomes.js";
 import {ajaxOutcomes} from "../../modules_outcomes/ajax_outcomes.js";
 import {statsUrlsOutcomes} from "../../modules_outcomes/statsUrls_outcomes.js";
 import {normalizeOutcomes} from "../../modules_outcomes/normalize_outcomes.js";
@@ -25,7 +26,7 @@ export class MainPageOutcomes {
         const list = normalizeOutcomes(items)
         list.forEach((item) => {
             const card = new StatCardComponentOutcomes(this.cardsGrid)
-            card.render(item, this.clickCard.bind(this), this.onDelete)
+            card.render(item, this.clickCard.bind(this), this.clickEdit.bind(this), this.onDelete)
         })
     }
 
@@ -66,6 +67,11 @@ export class MainPageOutcomes {
         const cardId = e.target.dataset.id
         const productPage = new ProductPageOutcomes(this.parent, cardId, this.data, this.onGoBack)
         productPage.render()
+    }
+
+    clickEdit(data) {
+        const editPage = new EditPageOutcomes(this.parent, data, this.onGoBack)
+        editPage.render()
     }
 
     render() {

@@ -1,4 +1,3 @@
-import {BackButtonComponentOutcomes} from "../../components_outcomes/back-button_outcomes/outcomes.js";
 import {HeaderComponentOutcomes} from "../../components_outcomes/header_outcomes/outcomes.js";
 import {ajaxOutcomes} from "../../modules_outcomes/ajax_outcomes.js";
 import {statsUrlsOutcomes} from "../../modules_outcomes/statsUrls_outcomes.js";
@@ -22,8 +21,6 @@ export class ProductPageOutcomes {
         const html = this.getHTML(normalizeOutcome(item))
         this.pageRoot.insertAdjacentHTML('afterbegin', html)
 
-        const backButton = new BackButtonComponentOutcomes(this.pageRoot)
-        backButton.render(this.clickBack.bind(this))
     }
 
     get pageRoot() {

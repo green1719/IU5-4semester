@@ -30,6 +30,13 @@ export class StatCardComponentOutcomes {
                         Рассчитать
                     </button>
                     <button class="st_calc-btn"
+                        style="width: auto; border-radius: 34px; font-size: 14px; padding: 6px 18px; background: #ffffff; color: #0F141E;"
+                        id="edit-card-${data.id}" data-id="${data.id}">
+                        Изменить
+                    </button>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                    <button class="st_calc-btn"
                         style="width: auto; border-radius: 34px; font-size: 14px; padding: 6px 18px; background: #ff4d4d; color: white;"
                         id="delete-card-${data.id}" data-id="${data.id}">
                         Удалить
@@ -39,12 +46,15 @@ export class StatCardComponentOutcomes {
         `
     }
 
-    render(data, clickListener, deleteListener) {
+    render(data, clickListener, editListener, deleteListener) {
         const html = this.getHTML(data)
         this.parent.insertAdjacentHTML('beforeend', html)
 
         document.getElementById(`click-card-${data.id}`)
             .addEventListener('click', clickListener)
+
+        document.getElementById(`edit-card-${data.id}`)
+            .addEventListener('click', () => editListener(data))
 
         document.getElementById(`delete-card-${data.id}`)
             .addEventListener('click', () => deleteListener(data.id))
