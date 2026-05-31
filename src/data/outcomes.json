@@ -4,12 +4,43 @@
     "title": "Числа Фибоначчи",
     "description": "Первые 10 чисел последовательности Фибоначчи",
     "image": "/images_outcomes/fibonacci_spiral.svg",
-    "values": [1, 1, 2, 3, 5, 8, 13, 21, 34, 55],
+    "values": [
+      1,
+      1,
+      2,
+      3,
+      5,
+      8,
+      13,
+      21,
+      34,
+      55
+    ],
     "methods": [
-      { "id": 1, "name": "Математическое ожидание", "formula": "M(X) = Σ xi / n", "result": 14.3 },
-      { "id": 2, "name": "Дисперсия", "formula": "D(X) = Σ(x - M)² / n", "result": 285.01 },
-      { "id": 3, "name": "Медиана", "formula": "Me = x[(n+1)/2]", "result": 6.5 },
-      { "id": 4, "name": "Стандартное отклонение", "formula": "σ = √D(X)", "result": 16.88 }
+      {
+        "id": 1,
+        "name": "Математическое ожидание",
+        "formula": "M(X) = Σ xi / n",
+        "result": 14.3
+      },
+      {
+        "id": 2,
+        "name": "Дисперсия",
+        "formula": "D(X) = Σ(x - M)² / n",
+        "result": 285.01
+      },
+      {
+        "id": 3,
+        "name": "Медиана",
+        "formula": "Me = x[(n+1)/2]",
+        "result": 6.5
+      },
+      {
+        "id": 4,
+        "name": "Стандартное отклонение",
+        "formula": "σ = √D(X)",
+        "result": 16.88
+      }
     ]
   },
   {
@@ -17,12 +48,43 @@
     "title": "Простые числа",
     "description": "Первые 10 простых чисел",
     "image": "/images_outcomes/primes.gif",
-    "values": [2, 3, 5, 7, 11, 13, 17, 19, 23, 29],
+    "values": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29
+    ],
     "methods": [
-      { "id": 1, "name": "Математическое ожидание", "formula": "M(X) = Σ xi / n", "result": 12.9 },
-      { "id": 2, "name": "Дисперсия", "formula": "D(X) = Σ(x - M)² / n", "result": 73.29 },
-      { "id": 3, "name": "Медиана", "formula": "Me = x[(n+1)/2]", "result": 12 },
-      { "id": 4, "name": "Стандартное отклонение", "formula": "σ = √D(X)", "result": 8.56 }
+      {
+        "id": 1,
+        "name": "Математическое ожидание",
+        "formula": "M(X) = Σ xi / n",
+        "result": 12.9
+      },
+      {
+        "id": 2,
+        "name": "Дисперсия",
+        "formula": "D(X) = Σ(x - M)² / n",
+        "result": 73.29
+      },
+      {
+        "id": 3,
+        "name": "Медиана",
+        "formula": "Me = x[(n+1)/2]",
+        "result": 12
+      },
+      {
+        "id": 4,
+        "name": "Стандартное отклонение",
+        "formula": "σ = √D(X)",
+        "result": 8.56
+      }
     ]
   },
   {
@@ -30,25 +92,48 @@
     "title": "Квадраты чисел",
     "description": "Квадраты натуральных чисел от 1 до 10",
     "image": "/images_outcomes/parabola.svg",
-    "values": [1, 4, 9, 16, 25, 36, 49, 64, 81, 100],
+    "values": [
+      1,
+      4,
+      9,
+      16,
+      25,
+      36,
+      49,
+      64,
+      81,
+      100
+    ],
     "methods": [
-      { "id": 1, "name": "Математическое ожидание", "formula": "M(X) = Σ xi / n", "result": 38.5 },
-      { "id": 2, "name": "Дисперсия", "formula": "D(X) = Σ(x - M)² / n", "result": 1051.05 },
-      { "id": 3, "name": "Медиана", "formula": "Me = x[(n+1)/2]", "result": 30.5 },
-      { "id": 4, "name": "Стандартное отклонение", "formula": "σ = √D(X)", "result": 32.42 }
+      {
+        "id": 1,
+        "name": "Математическое ожидание",
+        "formula": "M(X) = Σ xi / n",
+        "result": 38.5
+      },
+      {
+        "id": 2,
+        "name": "Дисперсия",
+        "formula": "D(X) = Σ(x - M)² / n",
+        "result": 1051.05
+      },
+      {
+        "id": 3,
+        "name": "Медиана",
+        "formula": "Me = x[(n+1)/2]",
+        "result": 30.5
+      },
+      {
+        "id": 4,
+        "name": "Стандартное отклонение",
+        "formula": "σ = √D(X)",
+        "result": 32.42
+      }
     ]
   },
   {
     "id": 4,
     "title": "Степени двойки",
-    "description": "Степени числа 2 от 0 до 9",
-    "image": "/images_outcomes/exponential.svg",
-    "values": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
-    "methods": [
-      { "id": 1, "name": "Математическое ожидание", "formula": "M(X) = Σ xi / n", "result": 102.3 },
-      { "id": 2, "name": "Дисперсия", "formula": "D(X) = Σ(x - M)² / n", "result": 23292.21 },
-      { "id": 3, "name": "Медиана", "formula": "Me = x[(n+1)/2]", "result": 24 },
-      { "id": 4, "name": "Стандартное отклонение", "formula": "σ = √D(X)", "result": 152.62 }
-    ]
+    "description": "Степени числа 2 от 0 до 9"
   }
 ]
